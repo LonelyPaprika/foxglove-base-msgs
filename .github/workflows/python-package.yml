@@ -29,6 +29,5 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: my-whl-artifacts
-          path: |
-            $(find . -name "*.whl")
+          path: ./foxglove_base_msgs-0.1-py3-none-any.whl
   
