@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: generate msgs
-        run: python foxglove-base-msgs/utils/generate_msgs.py  
+        run: python foxglove_base_msgs/utils/generate_msgs.py  
 
       - name: build wheel
         run: pip wheel -w . .

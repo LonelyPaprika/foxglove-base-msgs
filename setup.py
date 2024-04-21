@@ -3,11 +3,11 @@ from setuptools import setup, find_packages
 from pathlib import Path
 
 setup(
-    name='foxglove-base-msgs',
+    name='foxglove_base_msgs',
     version='0.1',
     packages=find_packages(),
     package_data={
-    'foxglove-base-msgs': ['msgs/*.proto', 
+    'foxglove_base_msgs': ['msgs/*.proto', 
                            'msgs/*.bin', 
                            'msgs/*.py']
     },
