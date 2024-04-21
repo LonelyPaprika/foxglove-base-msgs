@@ -26,14 +26,26 @@ jobs:
           platforms: arm64
 
       - name: Install dependencies
+        if: matrix.os == 'macos-11'
+        run: |
+          brew install protobuf
+
+      - name: Install dependencies
+        if: matrix.os == 'ubuntu-22.04'
         run: |
           sudo apt update
           sudo apt install protobuf-compiler
-          python -m pip install --upgrade pip
-          pip install . 
-          python foxglove-base-msgs/utils/generate_msgs.py
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip  
       
       - uses: actions/checkout@v3
+
+      - name: install package
+        run: |
+          pip install . 
+          python foxglove-base-msgs/utils/generate_msgs.py  
 
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.11.3
