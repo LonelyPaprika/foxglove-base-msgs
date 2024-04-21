@@ -8,26 +8,24 @@ on:
 
 jobs:
   build_wheel:
-    name: Build wheel
+    name: build wheel
     runs-on: macos-12
             
     steps:
-      - name: Install dependencies
+      - name: install protobuf
         run: |
           brew install protobuf
       
       - uses: actions/checkout@v3
 
-      - name: install package
-        run: |
-          pip install . 
-          python foxglove-base-msgs/utils/generate_msgs.py  
+      - name: generate msgs
+        run: python foxglove-base-msgs/utils/generate_msgs.py  
 
-      - name: Build wheels
+      - name: build wheel
         run: pip wheel -w . .
 
       - uses: actions/upload-artifact@v3
         with:
-          name: my-whl-artifacts
+          name: fbm-artifact
           path: ./foxglove_base_msgs-0.1-py3-none-any.whl
   
