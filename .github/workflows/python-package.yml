@@ -38,6 +38,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: generate msgs
+        run: python foxglove_base_msgs/utils/generate_msgs.py 
+
       - name: Build sdist
         run: pipx run build --sdist
       
@@ -56,7 +59,12 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: artifact
+          name: source-distribution
+          path: out
+      
+      - uses: actions/download-artifact@v4
+        with:
+          name: fbm-artifact
           path: out
 
       - name: Install dependencies
