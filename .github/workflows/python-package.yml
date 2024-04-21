@@ -24,9 +24,9 @@ jobs:
           python foxglove-base-msgs/utils/generate_msgs.py  
 
       - name: Build wheels
-        run: pip wheel -w /dist .
+        run: pip wheel -w . .
 
       - uses: actions/upload-artifact@v3
         with:
-          path: ./dist/*.whl
+          path: *.whl
   
