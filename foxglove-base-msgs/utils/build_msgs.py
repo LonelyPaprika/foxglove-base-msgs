@@ -7,7 +7,7 @@ def build_msgs(msgs_dir):
         command = [
             'protoc',
             f'--proto_path={msgs_dir}',
-            f'--descriptor_set_out={os.path.join(msgs_dir, proto_file.replace('proto', 'bin'))}',
+            f"--descriptor_set_out={os.path.join(msgs_dir, proto_file.replace('proto', 'bin'))}",
             '--include_imports',
             os.path.join(msgs_dir, proto_file)
         ]
