@@ -10,4 +10,7 @@ setup(
                            'msgs/*.bin', 
                            'msgs/*.py']
     },
+    install_requires=[
+        'protobuf'
+    ]
 )
