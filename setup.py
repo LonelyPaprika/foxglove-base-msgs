@@ -1,5 +1,6 @@
 import os
 from setuptools import setup, find_packages
+from pathlib import Path
 
 setup(
     name='foxglove-base-msgs',
@@ -10,7 +11,6 @@ setup(
                            'msgs/*.bin', 
                            'msgs/*.py']
     },
-    install_requires=[
-        'protobuf'
-    ]
+    include_package_data=True,
+    install_requires=Path('requirements.txt').read_text().splitlines(),
 )

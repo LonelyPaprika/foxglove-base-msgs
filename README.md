@@ -1,11 +1,5 @@
-# generate py modules
+# generate py modules and bin
 
 ```
-python generate_py_module.py in_out_dir
-```
-
-## build protobuf msg
-
-```
-python build_msgs.py input_dir output_dir
+python foxglove-base-msgs/utils/generate_msgs.py
 ```

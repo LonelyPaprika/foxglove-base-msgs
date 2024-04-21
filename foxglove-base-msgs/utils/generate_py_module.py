@@ -1,14 +1,12 @@
 import os
 import subprocess
-import argparse
 
-def generate_py_modules(p_d):
-    for p_f in [f for f in os.listdir(p_d) if f.endswith('.proto')]:
-        print(p_f)
-        subprocess.run(['protoc', '--python_out=' + '.', p_f])    
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument('proto_dir', help='dir which contains .proto files')
-    args = parser.parse_args()
-    generate_py_modules(args.proto_dir)
+def generate_py_modules(dir):
+    files = [f for f in os.listdir(dir) if f.endswith('.proto')]
+    
+    command = [
+        'protoc', 
+        f'--proto_path={dir}', 
+        f'--python_out={dir}'] + files
+    
+    subprocess.run(command)
