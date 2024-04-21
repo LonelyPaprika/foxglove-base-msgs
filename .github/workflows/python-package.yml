@@ -16,7 +16,7 @@ jobs:
         run: |
           brew install protobuf
       
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: generate msgs
         run: python foxglove-base-msgs/utils/generate_msgs.py  
@@ -24,7 +24,7 @@ jobs:
       - name: build wheel
         run: pip wheel -w . .
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: fbm-artifact
           path: ./foxglove_base_msgs-0.1-py3-none-any.whl
