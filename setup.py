@@ -4,7 +4,7 @@ from pathlib import Path
 
 setup(
     name='foxglove_base_msgs',
-    version='0.1',
+    version='1.0',
     packages=find_packages(),
     package_data={
     'foxglove_base_msgs': ['msgs/*.proto', 
