@@ -28,5 +28,7 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          path: *.whl
+          name: my-whl-artifacts
+          path: |
+            $(find . -name "*.whl")
   
