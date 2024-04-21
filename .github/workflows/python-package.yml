@@ -27,6 +27,8 @@ jobs:
         
     - name: Install dependencies
       run: |
+        sudo apt update
+        sudo apt install protobuf-compiler
         python -m pip install --upgrade pip
         pip install . 
         python foxglove-base-msgs/utils/generate_msgs.py foxglove-base-msgs/msgs
