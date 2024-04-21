@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message FloatMsg {
+  string identifier = 1;
+  float data = 2;
+}
