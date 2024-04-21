@@ -36,6 +36,10 @@ jobs:
     runs-on: macos-12
 
     steps:
+      - name: install protobuf
+        run: |
+          brew install protobuf
+
       - uses: actions/checkout@v4
 
       - name: generate msgs
