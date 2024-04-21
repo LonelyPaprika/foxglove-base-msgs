@@ -1,5 +1,7 @@
 *.bin
 /build
 /dist
-foxglove_base_msgs.egg-info/
-foxglove_base_msgs/msgs/*.py
+foxglove-base-msgs.egg-info/
+__pycache__
+.DS_store
+*.pyc

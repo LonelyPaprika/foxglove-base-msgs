@@ -6,7 +6,7 @@ setup(
     version='0.1',
     packages=find_packages(),
     package_data={
-    'foxglove_base_msgs': ['msgs/*.proto', 
+    'foxglove-base-msgs': ['msgs/*.proto', 
                            'msgs/*.bin', 
                            'msgs/*.py']
     },

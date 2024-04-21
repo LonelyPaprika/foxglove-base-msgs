@@ -4,7 +4,7 @@ import argparse
 
 def build_msgs(p_d, p_b):
     for p_f in [f for f in os.listdir(p_d) if f.endswith('.proto')]:
-        subprocess.run(['protoc', '--include_imports', '--descriptor_set_out=' + os.path.join(p_b, p_f.replace('.proto', '.bin')), os.path.join(p_d, p_f)])    
+        subprocess.run(['protoc', '--descriptor_set_out=' + os.path.join(p_b, p_f.replace('.proto', '.bin')), os.path.join(p_d, p_f)])    
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
