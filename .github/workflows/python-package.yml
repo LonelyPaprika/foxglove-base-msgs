@@ -24,12 +24,10 @@ jobs:
       - name: build wheel
         run: pip wheel -w . .
 
-      - run: mkdir out
-
       - uses: actions/upload-artifact@v4
         with:
           name: fbm-artifact
-          path: out/foxglove_base_msgs-0.1-py3-none-any.whl
+          path: foxglove_base_msgs-0.1-py3-none-any.whl
   
   build_sdist:
     name: build source distribution
@@ -48,12 +46,10 @@ jobs:
       - name: Build sdist
         run: pipx run build --sdist
       
-      - run: mkdir out
-
       - uses: actions/upload-artifact@v4
         with:
           name: source-distribution
-          path: out/*.tar.gz
+          path: dist/*.tar.gz
 
   upload_pypi:
     needs: [build_wheel, build_sdist]
