@@ -27,7 +27,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: fbm-wheel
-          path: ./foxglove_base_msgs-1.0-py3-none-any.whl
+          path: ./foxglove_base_msgs-*-py3-none-any.whl
   
   build_sdist:
     name: build source distribution
